@@ -1,11 +1,11 @@
 stages:
   train:
-    cmd: python YOLOX/train.py -f YOLOX/exps/example/custom/yolox_s.py -d 1 -b 8 --fp16 -o -c yolox_s.pth
+    cmd: python YOLOX/tools/train.py -f YOLOX/exps/example/custom/yolox_s.py -d 1 -b 8 --fp16 -o -c yolox_s.pth
     deps:
-    - YOLOX/train.py
+    - YOLOX/tools/train.py
     - YOLOX/exps/example/custom/yolox_s.py
     outs:
-    - YOLOX/YOLOX_outputs/yolox_x/best_ckpt.pth 
+    - YOLOX_outputs/yolox_s/latest_ckpt.pth 
   infer:
     cmd: python YOLOX/tools/demo.py image -n yolox-s -c YOLOX/weights/yolox_s.pth \
             --path YOLOX/assets/dog.jpg \

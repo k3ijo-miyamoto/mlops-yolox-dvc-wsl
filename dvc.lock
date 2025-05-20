@@ -24,3 +24,20 @@ stages:
       hash: md5
       md5: c98c520e8727decfb6943d15f2652513
       size: 1941
+  train:
+    cmd: python YOLOX/tools/train.py -f YOLOX/exps/example/custom/yolox_s.py -d 1
+      -b 8 --fp16 -o -c yolox_s.pth
+    deps:
+    - path: YOLOX/exps/example/custom/yolox_s.py
+      hash: md5
+      md5: a5c4807b02b7d7df3715dcb767bc0a02
+      size: 671
+    - path: YOLOX/tools/train.py
+      hash: md5
+      md5: cd8e76abed03cfcc9bfdd066968523f1
+      size: 4182
+    outs:
+    - path: YOLOX_outputs/yolox_s/latest_ckpt.pth
+      hash: md5
+      md5: 1b562bd78a3afb54831e64df9096fd5b
+      size: 72082771
