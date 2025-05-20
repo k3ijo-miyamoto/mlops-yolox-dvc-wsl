@@ -1,0 +1,6 @@
+defaults:
+  - model: linear
+  - train: base
+
+data_path: data/train.csv
+output_model: model.ckpt

@@ -1,0 +1,26 @@
+schema: '2.0'
+stages:
+  train_model:
+    cmd: python train.py
+    deps:
+    - path: data/train.csv
+      hash: md5
+      md5: 0cc732c60a5a4926df6639e0f8157c94
+      size: 44
+    - path: train.py
+      hash: md5
+      md5: 0cc9b02726b5c0c40c5388cbba104246
+      size: 1447
+    params:
+      params.yaml:
+        train.epochs: 20
+        train.learning_rate: 0.01
+    outs:
+    - path: metrics.json
+      hash: md5
+      md5: f50c9b7a534026cf96fd9dfb30271385
+      size: 32
+    - path: model.ckpt
+      hash: md5
+      md5: c98c520e8727decfb6943d15f2652513
+      size: 1941

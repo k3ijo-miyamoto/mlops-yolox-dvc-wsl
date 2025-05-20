@@ -1,0 +1,33 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: mlops-test
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mlops-yolox
+  namespace: mlops-test
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mlops-yolox
+  template:
+    metadata:
+      labels:
+        app: mlops-yolox
+    spec:
+      containers:
+        - name: trainer
+          image: mlops-yolox:latest
+          imagePullPolicy: Never
+          command: ["tail", "-f", "/dev/null"]
+          volumeMounts:
+            - name: weights
+              mountPath: /app/YOLOX/weights
+      volumes:
+        - name: weights
+          hostPath:
+            path: /data/weights
+
