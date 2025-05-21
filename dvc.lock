@@ -30,7 +30,7 @@ stages:
     deps:
     - path: YOLOX/exps/example/custom/yolox_s.py
       hash: md5
-      md5: a5c4807b02b7d7df3715dcb767bc0a02
+      md5: a17e1b3b1f7085cb495203d5832c2b3b
       size: 671
     - path: YOLOX/tools/train.py
       hash: md5
@@ -39,5 +39,5 @@ stages:
     outs:
     - path: YOLOX_outputs/yolox_s/latest_ckpt.pth
       hash: md5
-      md5: 1b562bd78a3afb54831e64df9096fd5b
+      md5: f5150fbc45e5beeafee3254ce0075adb
       size: 72082771
